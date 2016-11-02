@@ -4,10 +4,13 @@ dependencies:
 #    - npm install coffeescript # install from a different package manager
 
   override:
- #   - bundle install: # note ':' here
- #      timeout: 180 # fail if command has no output for 3 minutes
-        # IMPORTANT NOTE: ^^ the timeout modifier above must be
-        # double indented (four spaces) from the previous line
+    # From https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04
+    - sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
+    - gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+    - gpg -a --export E084DAB9 | sudo apt-key add -
+    - sudo apt-get update
+    - sudo apt-get -y install r-base
+
   
   # we automatically cache and restore many dependencies between
   # builds. If you need to, you can add custom paths to cache:
