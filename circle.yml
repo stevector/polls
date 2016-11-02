@@ -18,4 +18,4 @@ dependencies:
 ## Customize test commands
 test:
   override:
-  #  - phpunit test/unit-tests # use PHPunit for testing
+    - Rscript runmodel.R
