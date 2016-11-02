@@ -10,6 +10,7 @@ dependencies:
     - gpg -a --export E084DAB9 | sudo apt-key add -
     - sudo apt-get update
     - sudo apt-get -y install r-base
+    - sudo apt-get install pandoc
     # Install all the packages referenced at the top of runmodel.R
     - sudo su - -c "R -e \"install.packages('rstan', repos = 'http://cran.rstudio.com/')\""
     - sudo su - -c "R -e \"install.packages('dplyr', repos = 'http://cran.rstudio.com/')\""
