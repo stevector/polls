@@ -1,5 +1,5 @@
 rm(list = ls())
-options(mc.cores = parallel::detectCores())
+options(mc.cores = 1)
 
 library(rstan)
 library(dplyr)
